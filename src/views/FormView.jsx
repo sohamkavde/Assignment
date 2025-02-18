@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Import Quill's styles
 
 function FormView({
   name,
@@ -13,12 +15,13 @@ function FormView({
   setSummary,
   handleSubmit,
 }) {
- 
-
   return (
     <div style={{ margin: '2rem' }}>
       <h2>User Data Form</h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: 'flex', flexDirection: 'column', width: '300px' }}
+      >
         <input
           type="text"
           placeholder="Name"
@@ -51,14 +54,33 @@ function FormView({
           required
           style={{ marginBottom: '10px', padding: '10px' }}
         />
-        <textarea
-          placeholder="Summary"
+        
+        {/* React Quill Text Editor */}
+        <div>
+
+        <ReactQuill
           value={summary}
-          onChange={(e) => setSummary(e.target.value)}
-          rows="4"
-          style={{ marginBottom: '10px', padding: '10px' }}
-        ></textarea>
-        <button type="submit" style={{ padding: '10px', backgroundColor: '#4CAF50', color: 'white', border: 'none' }}>
+          onChange={setSummary}
+          placeholder="Write your summary here"
+          style={{
+            marginBottom: '10px',
+             
+            width:'100%',
+            height: '100px', // You can adjust this
+          }}
+          /> <br /><br />
+          </div>
+          
+        <button
+          type="submit"
+          style={{
+            padding: '10px',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            position:'relative'
+          }}
+        >
           Save Data
         </button>
       </form>
