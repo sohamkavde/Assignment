@@ -3,7 +3,7 @@ import { animated,useSpring } from '@react-spring/web';
 function CounterView({count,onIncrease,onDecrease,onReset}) {
   const styles = useSpring({
     backgroundColor: `rgb(${Math.min(count, 255)}, 100, 150)`,
-    width:'100vw',
+    width:'100%',
     height:'100vh'
   });
   return (
