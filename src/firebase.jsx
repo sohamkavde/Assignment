@@ -3,13 +3,13 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChang
 import { getFirestore, collection, getDocs,addDoc } from "firebase/firestore";
 // Your Firebase config object
 const firebaseConfig = {
-  apiKey: "AIzaSyAIQKvv5OCQ6XJfhYBX5TvcYptStSCmWm8",
-  authDomain: "reactcounterpro.firebaseapp.com",
-  projectId: "reactcounterpro",
-  storageBucket: "reactcounterpro.appspot.com", // Fixed incorrect storage domain
-  messagingSenderId: "999368971587",
-  appId: "1:999368971587:web:2f02e67fb38a671b370bf6",
-  measurementId: "G-91TDVKTGDM"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase app
