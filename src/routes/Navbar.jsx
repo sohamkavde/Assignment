@@ -42,7 +42,7 @@ function Navbar() {
       </AppBar>
 
       {/* Mobile Drawer */}
-      <Drawer
+      {/* <Drawer
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
@@ -55,7 +55,7 @@ function Navbar() {
             </ListItem>
           ))}
         </List>
-      </Drawer>
+      </Drawer> */}
       <Outlet/>
     </>
   );

@@ -16,7 +16,6 @@ function Approutes() {
   const  { user } = useCheckAuthForLogin();   
   return (
     <Router>
-      {console.log(app)}
       
       <Navbar />
       <Routes>
