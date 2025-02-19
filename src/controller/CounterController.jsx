@@ -8,8 +8,8 @@ function useCounterController() {
     localStorage.setItem('counter',count);
   },[count]);
 
-  const onIncrease = ()=> setCount((count)=>count+10); 
-  const onDecrease = ()=> setCount((count)=>Math.max(count - 10, 0)); 
+  const onIncrease = ()=> setCount((count)=>Math.min(count + 5,255)); 
+  const onDecrease = ()=> setCount((count)=>Math.max(count - 5, 0)); 
   const onReset = ()=> setCount(0);
   return {
     count,

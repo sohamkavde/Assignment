@@ -1,5 +1,7 @@
 import React from 'react'
 import { animated,useSpring } from '@react-spring/web';
+import { Button } from "@mui/material";
+
 function CounterView({count,onIncrease,onDecrease,onReset}) {
   const styles = useSpring({
     backgroundColor: `rgb(${Math.min(count, 255)}, 100, 150)`,
@@ -9,9 +11,11 @@ function CounterView({count,onIncrease,onDecrease,onReset}) {
   return (
     <animated.div style={{...styles,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
     <h1>{count}</h1>
-    <button onClick={onIncrease}>Increase</button><br />
-    <button onClick={onDecrease}>Decrease</button><br />
-    <button onClick={onReset}>Reset</button>    
+    <div>
+    <Button variant="contained" color="primary" onClick={onIncrease}>Increase</Button> &nbsp;&nbsp;
+    <Button variant="contained" color="error" onClick={onDecrease}>Decrease</Button> &nbsp;&nbsp;
+    <Button variant="contained" color="primary" onClick={onReset}>Reset</Button>    &nbsp;&nbsp;
+    </div>
     </animated.div>
     
   )

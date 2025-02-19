@@ -14,6 +14,10 @@ function Navbar() {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const myNavButtonStyle = {
+    textDecoration:'none',
+    color:'black'
+  };
 
   return (
     <>
@@ -23,11 +27,11 @@ function Navbar() {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             MyApp
           </Typography>
-          <Button variant="contained" color="inherit"><NavLink to='/'>Home</NavLink></Button> &nbsp;
-          <Button variant="contained" color="inherit"><NavLink to='/Form'>Form</NavLink></Button>&nbsp;
+          <NavLink to='/' style={myNavButtonStyle}><Button variant="contained" color="inherit">Home</Button></NavLink> &nbsp;
+         <NavLink to='/Form' style={myNavButtonStyle}> <Button variant="contained" color="inherit">Form</Button></NavLink>&nbsp;
           {!user?
-          <Button variant="outlined" color="inherit"><NavLink to='/Login'>Login</NavLink></Button>:
-          <Button variant="outlined" color="inherit" onClick={logOutService}>LogOut</Button>          
+         <NavLink to='/Login' style={myNavButtonStyle}> <Button variant="outlined" color="inherit">Login</Button></NavLink>:
+          <Button variant="outlined" color="inherit" onClick={logOutService} style={myNavButtonStyle}>LogOut</Button>          
         }
            
           <IconButton

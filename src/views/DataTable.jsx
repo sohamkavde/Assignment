@@ -55,7 +55,7 @@ const DataTable = ({add}) => {
     tableInstance;
 
   return (
-    <div className="table-container">
+    <div className="table-container" style={{overflowX:'scroll',width:'70%'}}>
       <h2>User Information</h2>
 
       {loading ? (

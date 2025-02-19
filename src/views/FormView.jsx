@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { db, collection, addDoc } from '../firebase'; // Import Firestore functions
 import DataTable from './DataTable';
+import {   Button  } from "@mui/material";
 
 function FormView() {
   // State for form fields
@@ -51,10 +52,10 @@ function FormView() {
   };
 
   return (
-    <div style={{ margin: '2rem',display:'flex' }}>
+    <div style={{ margin: '5px',display:'flex',justifyContent:'center',flexWrap:'wrap' }}>
       <form
         onSubmit={handleSubmit}
-        style={{ display: 'flex', flexDirection: 'column', width: '300px',padding:'5px' }}
+        style={{ display: 'flex', flexDirection: 'column', width:'20%',padding:'5px' }}
         >
         <h2>User Data Form</h2>
         <input
@@ -104,7 +105,7 @@ function FormView() {
           />
         </div>
 
-        <button
+        <Button
           type="submit"
           style={{
             padding: '10px',
@@ -118,7 +119,7 @@ function FormView() {
           disabled={loading}
         >
           {loading ? 'Saving...' : 'Save Data'}
-        </button>
+        </Button>
 
         {/* Success/Error Message */}
         {message && <p style={{ marginTop: '10px', color: message.includes('Error') ? 'red' : 'green' }}>{message}</p>}
